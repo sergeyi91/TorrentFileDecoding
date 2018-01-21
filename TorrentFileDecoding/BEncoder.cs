@@ -57,10 +57,10 @@ namespace TorrentFileDecoding
             currentByte = m_stream.ReadByte();
          } while (currentByte != ':');
 
-         if (length >= 8192)
+         if (length >= 16384)
             throw new Exception("temporary byte array is too short");
 
-         byte[] tmp = new byte[8192];
+         byte[] tmp = new byte[16384];
          m_stream.Read(tmp, 0, length);
 
          string result = Encoding.UTF8.GetString(tmp, 0, length);
