@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TorrentFileDecoding
 {
-   class Encoder
+   class BEncoder
    {
       private FileStream m_stream;
 
-      public Encoder(FileStream stream)
+      public BEncoder(FileStream stream)
       {
          m_stream = stream;
       }
