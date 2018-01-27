@@ -6,8 +6,7 @@ namespace TorrentFileDecoding
    {
       public static TorrentStatistics Difference(TorrentStatistics oldStat, TorrentStatistics newStat)
       {
-         TorrentStatistics result = new TorrentStatistics();
-         result.Caption = (string) newStat.Caption.Clone();
+         TorrentStatistics result = newStat.Clone();
          result.Uploaded = newStat.Uploaded - oldStat.Uploaded;
          return result;
       }

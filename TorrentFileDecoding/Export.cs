@@ -24,7 +24,7 @@ namespace TorrentFileDecoding
          foreach(TorrentStatistics stat in list)
          {
             double uploadMB = stat.Uploaded / (1024.0 * 1024);
-            writer.WriteLine(String.Format("{0}\t{1:000.000}", stat.Caption, uploadMB));
+            writer.WriteLine(String.Format("{0}\t{1:000.000}", stat.Name, uploadMB));
          }
 
          writer.Close();

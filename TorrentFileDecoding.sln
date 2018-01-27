@@ -4,6 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentFileDecoding", "TorrentFileDecoding\TorrentFileDecoding.csproj", "{8599C184-8E37-46AD-BC09-2B9FEA703990}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF} = {C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseUtils", "DatabaseUtils\DatabaseUtils.csproj", "{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEncoding", "BEncoding\BEncoding.csproj", "{858EBB76-6884-431B-99A1-560B3C173705}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{8599C184-8E37-46AD-BC09-2B9FEA703990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8599C184-8E37-46AD-BC09-2B9FEA703990}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8599C184-8E37-46AD-BC09-2B9FEA703990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E7DD1D-7909-4CA4-AE13-DCFA84474CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858EBB76-6884-431B-99A1-560B3C173705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858EBB76-6884-431B-99A1-560B3C173705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858EBB76-6884-431B-99A1-560B3C173705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858EBB76-6884-431B-99A1-560B3C173705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

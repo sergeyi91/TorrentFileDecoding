@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TorrentFileDecoding
+namespace BEncoding
 {
    public interface BElement
    {

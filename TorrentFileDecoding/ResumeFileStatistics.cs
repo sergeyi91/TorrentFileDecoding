@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BEncoding;
 
 namespace TorrentFileDecoding
 {
@@ -14,7 +15,7 @@ namespace TorrentFileDecoding
             if (element.Key.Value == ".fileguard" || element.Key.Value == "rec")
                continue;
 
-            torrents.Add(element.Key.Value, new TorrentStatistics((BDictionary)element.Value));
+            torrents.Add(element.Key.Value, new TorrentStatistics(element.Key.Value,(BDictionary)element.Value));
          }
       }
    }

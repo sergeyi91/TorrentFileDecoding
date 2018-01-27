@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace TorrentFileDecoding
+namespace BEncoding
 {
    /// <summary>
    /// A bencode string.

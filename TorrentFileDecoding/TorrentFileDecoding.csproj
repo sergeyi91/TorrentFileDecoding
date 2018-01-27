@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -60,19 +60,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDictionary.cs" />
-    <Compile Include="BElement.cs" />
-    <Compile Include="BInteger.cs" />
-    <Compile Include="BList.cs" />
-    <Compile Include="BString.cs" />
     <Compile Include="Calculator.cs" />
-    <Compile Include="BEncoder.cs" />
     <Compile Include="Export.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeFileEncoder.cs" />
     <Compile Include="ResumeFileStatistics.cs" />
+    <Compile Include="TorrentFileEncoder.cs" />
+    <Compile Include="TorrentFileInfo.cs" />
     <Compile Include="TorrentStatistics.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -88,6 +85,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BEncoding\BEncoding.csproj">
+      <Project>{858ebb76-6884-431b-99a1-560b3c173705}</Project>
+      <Name>BEncoding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseUtils\DatabaseUtils.csproj">
+      <Project>{c1e7dd1d-7909-4ca4-ae13-dcfa84474cbf}</Project>
+      <Name>DatabaseUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

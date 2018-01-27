@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace TorrentFileDecoding
+namespace BEncoding
 {
-   class BEncoder
+   public class BEncoder
    {
       private FileStream m_stream;
+      private byte[] m_byteArray;
+      private readonly long m_byteArraySize = 4000000;
 
       public BEncoder(FileStream stream)
       {
          m_stream = stream;
+         m_byteArray = new byte[m_byteArraySize];
       }
       public BElement[] Decode()
       {
@@ -57,13 +60,12 @@ namespace TorrentFileDecoding
             currentByte = m_stream.ReadByte();
          } while (currentByte != ':');
 
-         if (length >= 16384)
+         if (length >= m_byteArraySize)
             throw new Exception("temporary byte array is too short");
 
-         byte[] tmp = new byte[16384];
-         m_stream.Read(tmp, 0, length);
+         m_stream.Read(m_byteArray, 0, length);
 
-         string result = Encoding.UTF8.GetString(tmp, 0, length);
+         string result = Encoding.UTF8.GetString(m_byteArray, 0, length);
          return result;
       }
 
@@ -82,7 +84,6 @@ namespace TorrentFileDecoding
 
       private BList readList()
       {
-         // LOCAL_TODO
          BList list = new BList();
 
          int b = m_stream.ReadByte();
