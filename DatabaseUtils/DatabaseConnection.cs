@@ -139,7 +139,7 @@ namespace DatabaseUtils
          }
       }
 
-      private bool tableExists(string tableName)
+      public bool IsTableExists(string tableName)
       {
          string sql =
              "declare @exists bit; " +
@@ -164,7 +164,7 @@ namespace DatabaseUtils
          SqlTableCreator creator = new SqlTableCreator(m_connection);
          foreach (DataTable table in collectedData.Tables)
          {
-            bool exists = tableExists(table.TableName);
+            bool exists = IsTableExists(table.TableName);
             if (exists && !m_needToDropTables)
             {
                continue;
@@ -202,5 +202,11 @@ namespace DatabaseUtils
          copyData(collectedData);
       }
 
+      public SqlDataReader ExecuteQuery(string query)
+      {
+         SqlCommand command = m_connection.CreateCommand();
+         command.CommandText = query;
+         return command.ExecuteReader();
+      }
    }
 }

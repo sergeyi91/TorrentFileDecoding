@@ -66,6 +66,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeFileEncoder.cs" />
     <Compile Include="ResumeFileStatistics.cs" />
+    <Compile Include="TableStatsForLastRun.cs" />
+    <Compile Include="TableTorrentFiles.cs" />
     <Compile Include="TorrentFileEncoder.cs" />
     <Compile Include="TorrentFileInfo.cs" />
     <Compile Include="TorrentStatistics.cs" />

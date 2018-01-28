@@ -166,7 +166,7 @@ namespace DatabaseUtils
             switch (type.ToString())
             {
                 case "System.String":
-                    return "VARCHAR(" +
+                    return "NVARCHAR(" +
                         ((columnSize == -1) ? "max" : columnSize.ToString() ) + ")";
 
                 case "System.Decimal":
@@ -191,7 +191,7 @@ namespace DatabaseUtils
 
                 case "System.Int8":
                 case "System.UInt8":
-                    return "CHAR(1)";
+                    return "NCHAR(1)";
 
                 case "System.Int16":
                 case "System.UInt16":

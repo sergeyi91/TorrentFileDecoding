@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
@@ -9,7 +10,7 @@ namespace DatabaseUtils
    /// List of collected ValueType values
    /// </summary>
    /// <typeparam name="ValueType">either some structure, class or primitive type. (see ValuesCollector class)</typeparam>
-   public class ValueList<ValueType>
+   public class ValueList<ValueType>: IEnumerable<ValueType>
    {
       /// <summary>
       /// constructs the list with checking that ValueType is acceptable for collection.
@@ -182,6 +183,21 @@ namespace DatabaseUtils
 
       private readonly List<ValueType> m_valuesList =
           new List<ValueType>();
+
+      public int Count
+      {
+         get { return m_valuesList.Count; }
+      }
+
+      public IEnumerator<ValueType> GetEnumerator()
+      {
+         return m_valuesList.GetEnumerator();
+      }
+
+      IEnumerator IEnumerable.GetEnumerator()
+      {
+         return this.GetEnumerator();
+      }
 
       /// <summary>
       /// If false - only fields will be extracted.
